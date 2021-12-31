@@ -23,14 +23,14 @@
     <div>
       <div>
         <main>
-          %= content
+          %== content
         </main>
       </div>
     </div>
     % const test = 'foo';
     <footer>
       <div>
-        <%=
+        <%==
           test
         %>
       </div>

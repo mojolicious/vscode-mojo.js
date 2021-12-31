@@ -161,14 +161,14 @@
           "begin": "<%%",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.whitespace.begin.mt"
+              "name": "punctuation.section.embedded.begin.mt"
             }
           },
           "contentName": "pubctuation.whitespace.replacement.mt",
           "end": "%>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.whitespace.end.mt"
+              "name": "punctuation.section.embedded.end.mt"
             },
             "1": {
               "name": "text.html.basic"
@@ -179,7 +179,7 @@
           "match": "(%%)",
           "captures": {
             "0": {
-              "name": "punctuation.whitespace.replacement.mt"
+              "name": "punctuation.section.embedded.replacement.mt"
             }
           }
         }

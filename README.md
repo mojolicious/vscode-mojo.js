@@ -10,4 +10,4 @@
 
 VS Code support for the [mojo.js](http://mojojs.org) real-time web framework.
 
-![Screenshot](https://raw.github.com/kraih/vscode-mojo.js/main/example.png)
+![Screenshot](https://github.com/mojolicious/vscode-mojo.js/raw/main/example.png)

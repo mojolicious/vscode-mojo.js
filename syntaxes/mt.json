@@ -5,7 +5,6 @@
   "injections": {
     "text.html.mt": {
       "patterns": [
-        { "include": "#replacement" },
         {
           "begin": "(^\\s*)(?=<%#(?![^%]*%>))",
           "beginCaptures": {
@@ -25,6 +24,26 @@
             }
           ]
         },
+        {
+          "begin": "(^\\s*)(?=<%%(?![^%]*%>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.replacement.leading.mt"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.replacement.trailing.mt"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#replacement"
+            }
+          ]
+        },
+        { "include": "#replacement" },
         {
           "begin": "(^\\s*)(?=<%(?![^%]*%>))",
           "beginCaptures": {
@@ -137,12 +156,34 @@
       ]
     },
     "replacement": {
-      "match": "(\\s*<?%%)",
-      "captures": {
-        "0": {
-          "name": "punctuation.whitespace.replace.mt"
+      "patterns": [
+        {
+          "begin": "<%%",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.whitespace.begin.mt"
+            }
+          },
+          "contentName": "pubctuation.whitespace.replacement.mt",
+          "end": "%>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.whitespace.end.mt"
+            },
+            "1": {
+              "name": "text.html.basic"
+            }
+          }
+        },
+        {
+          "match": "(%%)",
+          "captures": {
+            "0": {
+              "name": "punctuation.whitespace.replacement.mt"
+            }
+          }
         }
-      }
+      ]
     },
     "tags": {
       "patterns": [

@@ -11,7 +11,8 @@
     %>
     <title>Debug</title>
     <%%=
-      'replace' %>
+      'replace'
+    %>
     %%= 'this'
     <% for (let i = 1; i <= 3; i++) { =%>
       <%= i %>
@@ -23,10 +24,10 @@
     </script>
   </head>
   <%# this is %>
-  %# just
   <%#
    a test
   %>
+  %# just
   <body>
     <header>
       %= contentFor('header')

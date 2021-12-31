@@ -188,14 +188,14 @@
     "tags": {
       "patterns": [
         {
-          "begin": "<%(?!>)={,2}(?![^%]*%>)",
+          "begin": "<%(?!>)={,2}(?![^%]*=?%>)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.section.embedded.begin.mt"
             }
           },
           "contentName": "source.js.embedded.mt",
-          "end": "%>",
+          "end": "=?%>",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.mt"
@@ -206,15 +206,6 @@
           },
           "name": "meta.embedded.block.mt",
           "patterns": [
-            {
-              "captures": {
-                "1": {
-                  "name": "punctuation.definition.comment.mt"
-                }
-              },
-              "match": "(#).*?(?=%>)",
-              "name": "comment.line.number-sign.mt"
-            },
             {
               "include": "source.js"
             }
@@ -228,7 +219,7 @@
             }
           },
           "contentName": "source.js.embedded.mt",
-          "end": "%>",
+          "end": "=?%>",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.mt"
@@ -239,15 +230,6 @@
           },
           "name": "meta.embedded.line.mt",
           "patterns": [
-            {
-              "captures": {
-                "1": {
-                  "name": "punctuation.definition.comment.mt"
-                }
-              },
-              "match": "(#).*?(?=%>)",
-              "name": "comment.line.number-sign.mt"
-            },
             {
               "include": "source.js"
             }

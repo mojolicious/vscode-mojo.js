@@ -2,7 +2,7 @@
   "name": "javascript-mt-support",
   "displayName": "mojo.js",
   "description": "VS Code support for mojo.js",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "publisher": "kraih",
   "repository": {
     "type": "git",

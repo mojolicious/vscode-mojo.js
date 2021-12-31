@@ -1,76 +1,207 @@
 {
   "name": "Embedded JavaScript (mojo.js)",
   "scopeName": "text.html.mt",
-  "injectionSelector": "L:text.html",
+  "fileTypes": ["html.mt"],
+  "injections": {
+    "text.html.mt": {
+      "patterns": [
+        {
+          "begin": "(^\\s*)(?=<%+#(?![^%]*%>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.comment.leading.mt"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.comment.trailing.mt"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comment"
+            }
+          ]
+        },
+        {
+          "begin": "(^\\s*)(?=<%(?![^%]*%>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.leading.mt"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.trailing.mt"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#tags"
+            }
+          ]
+        },
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#lines"
+        },
+        {
+          "include": "#tags"
+        }
+      ]
+    }
+  },
   "patterns": [
-    { "include": "#comment-block" },
-    { "include": "#code-block" },
-    { "include": "#code-line" },
-    { "include": "#code-line-indented" }
+    {
+      "include": "text.html.basic"
+    }
   ],
   "repository": {
-    "comment-block": {
-      "name": "comment.block.mt",
-      "begin": "<%#",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.definition.comment.begin.mt"
-        }
-      },
-      "end": "%>",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.definition.comment.end.mt"
-        }
-      }
-    },
-    "code-block": {
-      "name": "source.js.mt.block",
-      "begin": "(<%={,2})",
-      "beginCaptures": {
-        "0": {
-          "name": "support.begin.mt"
-        }
-      },
-      "end": "(=?%>)",
-      "endCaptures": {
-        "0": {
-          "name": "support.end.mt"
-        }
-      },
+    "comment": {
       "patterns": [
         {
-          "include": "source.js"
+          "begin": "<%+#",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.begin.mt"
+            }
+          },
+          "end": "%>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.end.mt"
+            }
+          },
+          "name": "comment.block.mt"
         }
       ]
     },
-    "code-line": {
-      "begin": "(?<=\\s{2})(%={,2})",
-      "beginCaptures": {
-        "0": {
-          "name": "support.begin.mt"
-        }
-      },
-      "end": "$",
-      "name": "source.js.mt.indented",
+    "lines": {
       "patterns": [
         {
-          "include": "source.js"
+          "begin": "(?<=\\s{2})(%#)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.indented.line.mt"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.mt.indented"
+        },
+        {
+          "begin": "^(%#)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.line.mt"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.mt"
+        },
+        {
+          "begin": "(?<=\\s{2})(%={,2})",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.indented.line.mt"
+            }
+          },
+          "contentName": "source.js.embedded.mt",
+          "end": "$",
+          "name": "source.js.mt.indented",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "begin": "^(%={,2})",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.line.mt"
+            }
+          },
+          "end": "$",
+          "name": "source.js.mt.line",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
         }
       ]
     },
-    "code-line-indented": {
-      "name": "source.js.mt.line",
-      "begin": "^(%={,2})",
-      "beginCaptures": {
-        "0": {
-          "name": "support.begin.mt"
-        }
-      },
-      "end": "$",
+    "tags": {
       "patterns": [
         {
-          "include": "source.js"
+          "begin": "<%+(?!>)=?(?![^%]*%>)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.mt"
+            }
+          },
+          "contentName": "source.js.embedded.mt",
+          "end": "%>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.mt"
+            },
+            "1": {
+              "name": "source.js"
+            }
+          },
+          "name": "meta.embedded.block.mt",
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "name": "punctuation.definition.comment.mt"
+                }
+              },
+              "match": "(#).*?(?=%>)",
+              "name": "comment.line.number-sign.mt"
+            },
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "begin": "<%+(?!>)=?",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.mt"
+            }
+          },
+          "contentName": "source.js.embedded.mt",
+          "end": "%>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.mt"
+            },
+            "1": {
+              "name": "source.js"
+            }
+          },
+          "name": "meta.embedded.line.mt",
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "name": "punctuation.definition.comment.mt"
+                }
+              },
+              "match": "(#).*?(?=%>)",
+              "name": "comment.line.number-sign.mt"
+            },
+            {
+              "include": "source.js"
+            }
+          ]
         }
       ]
     }

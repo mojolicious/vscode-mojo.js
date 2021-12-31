@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+%# some comment
+% const hello = 'world';
 <!-- Request ID: <%= ctx.req.requestId %> -->
 <html>
   <head>
@@ -10,7 +12,10 @@
     </script>
   </head>
   <%# this is %>
-  %#  just
+  %# just
+  <%#
+   a test
+  %>
   <body>
     <header>
       %= contentFor('header')

@@ -1,0 +1,57 @@
+{
+  "name": "javascript-mt-support",
+  "displayName": "mojo.js",
+  "description": "VS Code support for mojo.js",
+  "version": "1.0.4",
+  "publisher": "kraih",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mojolicious/vscode-mojo.js"
+  },
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "mojo",
+    "javascript",
+    "template"
+  ],
+  "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "text.html.mt",
+        "path": "./syntaxes/mt.json",
+        "injectTo": [
+          "text.html"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.mt": "mt",
+          "meta.embedded.block.javascript": "source.js"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "configurationDefaults": {
+      "files.associations": {
+        "*.mt": "html"
+      },
+      "emmet.includeLanguages": {
+        "mt": "html"
+      }
+    }
+  }
+}

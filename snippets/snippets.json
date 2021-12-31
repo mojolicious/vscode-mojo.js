@@ -1,0 +1,17 @@
+{
+  "MT Code": {
+    "prefix": "mt",
+    "body": ["<% $1 %> $2"],
+    "description": "MT code block"
+  },
+  "MT Escaped": {
+    "prefix": "mte",
+    "body": ["<%= $1 %> $2"],
+    "description": "MT escaped expression"
+  },
+  "MT Expression": {
+    "prefix": "mtx",
+    "body": ["<%== $1 %> $2"],
+    "description": "MT expression"
+  }
+}

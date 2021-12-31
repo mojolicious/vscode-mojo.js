@@ -1,0 +1,58 @@
+{
+  "name": "Embedded JavaScript (mojo.js)",
+  "scopeName": "text.html.mt",
+  "injectionSelector": "L:text.html",
+  "fileTypes": ["mt"],
+  "patterns": [
+    {
+      "name": "source.js.mt.block",
+      "begin": "(<%={,2})",
+      "beginCaptures": {
+        "0": {
+          "name": "support.begin.mt"
+        }
+      },
+      "end": "(=?%>)",
+      "endCaptures": {
+        "0": {
+          "name": "support.end.mt"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "begin": "(?<=\\s{2})(%={,2})",
+      "beginCaptures": {
+        "0": {
+          "name": "support.begin.mt"
+        }
+      },
+      "end": "$",
+      "name": "source.js.mt.indented",
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "name": "source.js.mt.line",
+      "begin": "^(%={,2})",
+      "beginCaptures": {
+        "0": {
+          "name": "support.begin.mt"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    }
+  ]
+}

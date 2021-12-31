@@ -10,7 +10,7 @@
     </script>
   </head>
   <%# this is %>
-  %#  a test
+  %#  just
   <body>
     <header>
       %= contentFor('header')

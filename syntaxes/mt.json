@@ -5,8 +5,9 @@
   "injections": {
     "text.html.mt": {
       "patterns": [
+        { "include": "#replacement" },
         {
-          "begin": "(^\\s*)(?=<%+#(?![^%]*%>))",
+          "begin": "(^\\s*)(?=<%#(?![^%]*%>))",
           "beginCaptures": {
             "0": {
               "name": "punctuation.whitespace.comment.leading.mt"
@@ -64,7 +65,7 @@
     "comment": {
       "patterns": [
         {
-          "begin": "<%+#",
+          "begin": "<%#",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.comment.begin.mt"
@@ -135,10 +136,18 @@
         }
       ]
     },
+    "replacement": {
+      "match": "(\\s*<?%%)",
+      "captures": {
+        "0": {
+          "name": "punctuation.whitespace.replace.mt"
+        }
+      }
+    },
     "tags": {
       "patterns": [
         {
-          "begin": "<%+(?!>)={,2}(?![^%]*%>)",
+          "begin": "<%(?!>)={,2}(?![^%]*%>)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.section.embedded.begin.mt"
@@ -171,7 +180,7 @@
           ]
         },
         {
-          "begin": "<%+(?!>)={,2}",
+          "begin": "<%(?!>)={,2}",
           "beginCaptures": {
             "0": {
               "name": "punctuation.section.embedded.begin.mt"

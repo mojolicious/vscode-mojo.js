@@ -4,7 +4,18 @@
 <!-- Request ID: <%= ctx.req.requestId %> -->
 <html>
   <head>
+    <%
+
+       const yada = 'yada';
+
+    %>
     <title>Debug</title>
+    <%%=
+      'replace' %>
+    %%= 'this'
+    <% for (let i = 1; i <= 3; i++) { =%>
+      <%= i %>
+    <% } =%>
     <%= ctx.mojoFaviconTag() %>
     <script>
       const foo = 23;

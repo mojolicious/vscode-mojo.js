@@ -204,7 +204,7 @@
               "name": "source.js"
             }
           },
-          "name": "meta.embedded.block.mt",
+          "name": "text.html.mt.block",
           "patterns": [
             {
               "include": "source.js"
@@ -228,7 +228,7 @@
               "name": "source.js"
             }
           },
-          "name": "meta.embedded.line.mt",
+          "name": "text.html.mt.line",
           "patterns": [
             {
               "include": "source.js"

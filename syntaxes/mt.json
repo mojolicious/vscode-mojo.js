@@ -129,7 +129,7 @@
               "name": "punctuation.section.embedded.indented.line.mt"
             }
           },
-          "contentName": "source.js.embedded.mt",
+          "contentName": "source.js",
           "end": "$",
           "name": "source.js.mt.indented",
           "patterns": [
@@ -164,7 +164,7 @@
               "name": "punctuation.section.embedded.begin.mt"
             }
           },
-          "contentName": "pubctuation.whitespace.replacement.mt",
+          "contentName": "punctuation.whitespace.replacement.mt",
           "end": "%>",
           "endCaptures": {
             "0": {
@@ -194,7 +194,7 @@
               "name": "punctuation.section.embedded.begin.mt"
             }
           },
-          "contentName": "source.js.embedded.mt",
+          "contentName": "source.js",
           "end": "=?%>",
           "endCaptures": {
             "0": {
@@ -218,7 +218,7 @@
               "name": "punctuation.section.embedded.begin.mt"
             }
           },
-          "contentName": "source.js.embedded.mt",
+          "contentName": "source.js",
           "end": "=?%>",
           "endCaptures": {
             "0": {

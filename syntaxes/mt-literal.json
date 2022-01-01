@@ -5,7 +5,6 @@
   "patterns": [
     {
       "name": "taggedTemplates",
-      "contentName": "meta.embedded.literal.mt",
       "begin": "mt((`))",
       "beginCaptures": {
         "1": {

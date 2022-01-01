@@ -30,11 +30,7 @@
       {
         "language": "mt",
         "scopeName": "text.html.mt",
-        "path": "./syntaxes/mt.json",
-        "embeddedLanguages": {
-          "source.css": "css",
-          "source.js": "javascript"
-        }
+        "path": "./syntaxes/mt.json"
       },
       {
         "injectTo": [

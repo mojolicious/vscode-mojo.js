@@ -28,6 +28,12 @@
       },
       "patterns": [
         {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "source.ts#string-character-escape"
+        },
+        {
           "include": "text.html.mt"
         }
       ]

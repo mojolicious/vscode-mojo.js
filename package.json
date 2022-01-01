@@ -35,6 +35,17 @@
           "source.css": "css",
           "source.js": "javascript"
         }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.tsx"
+        ],
+        "scopeName": "mt.literal",
+        "path": "./syntaxes/mt-literal.json"
       }
     ],
     "languages": [

@@ -42,6 +42,17 @@
         ],
         "scopeName": "mt.literal",
         "path": "./syntaxes/mt-literal.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.tsx"
+        ],
+        "scopeName": "sql.literal",
+        "path": "./syntaxes/sql-literal.json"
       }
     ],
     "languages": [

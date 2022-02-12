@@ -9,6 +9,13 @@
        const yada = 'yada';
 
     %>
+    <{fooBlock(bar)}>
+      test
+      %= bar
+      123
+      <%= bar %>
+    <{/fooBlock}>
+    <% contentFor('foo', fooBlock); %>
     <title>Debug</title>
     <%%=
       'replace'

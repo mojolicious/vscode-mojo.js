@@ -71,6 +71,9 @@
         },
         {
           "include": "#tags"
+        },
+        {
+          "include": "#blocks"
         }
       ]
     }
@@ -234,6 +237,28 @@
               "include": "source.js"
             }
           ]
+        }
+      ]
+    },
+    "blocks": {
+      "patterns": [
+        {
+          "begin": "<{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.mt"
+            }
+          },
+          "contentName": "punctuation.whitespace.replacement.mt",
+          "end": "}>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.mt"
+            },
+            "1": {
+              "name": "text"
+            }
+          }
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "name": "SQL Template Literal (mojo.js)",
-  "fileTypes": ["js", "jsx", "ts", "tsx", "vue", "mjs", "cjs", "html", "mt"],
+  "fileTypes": ["js", "jsx", "ts", "tsx", "vue", "mjs", "cjs", "html", "tmpl"],
   "injectionSelector": "L:source -comment -string",
   "patterns": [
     {

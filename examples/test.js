@@ -1,7 +1,7 @@
-import {mt} from '@mojojs/template';
+import {tmpl} from '@mojojs/template';
 import {sql} from '@mojojs/pg';
 
-const template = mt`
+const template = tmpl`
 <html>
   <head>
     <title><%= title %></title>

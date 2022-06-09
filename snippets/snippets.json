@@ -1,17 +1,17 @@
 {
-  "MT Code": {
-    "prefix": "mt",
+  "Tmpl Code": {
+    "prefix": "tmpl",
     "body": ["<% $1 %> $2"],
-    "description": "MT code block"
+    "description": "Tmpl code block"
   },
-  "MT Escaped": {
-    "prefix": "mte",
+  "Tmpl Escaped": {
+    "prefix": "tmple",
     "body": ["<%= $1 %> $2"],
-    "description": "MT escaped expression"
+    "description": "Tmpl escaped expression"
   },
-  "MT Expression": {
-    "prefix": "mtx",
+  "Tmpl Expression": {
+    "prefix": "tmplx",
     "body": ["<%== $1 %> $2"],
-    "description": "MT expression"
+    "description": "Tmpl expression"
   }
 }

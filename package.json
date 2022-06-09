@@ -1,5 +1,5 @@
 {
-  "name": "javascript-mt-support",
+  "name": "javascript-tmpl-support",
   "displayName": "mojo.js",
   "description": "VS Code support for mojo.js",
   "version": "2.4.0",
@@ -28,9 +28,9 @@
   "contributes": {
     "grammars": [
       {
-        "language": "mt",
-        "scopeName": "text.html.mt",
-        "path": "./syntaxes/mt.json"
+        "language": "tmpl",
+        "scopeName": "text.html.tmpl",
+        "path": "./syntaxes/tmpl.json"
       },
       {
         "injectTo": [
@@ -40,8 +40,8 @@
           "source.ts",
           "source.tsx"
         ],
-        "scopeName": "mt.literal",
-        "path": "./syntaxes/mt-literal.json"
+        "scopeName": "tmpl.literal",
+        "path": "./syntaxes/tmpl-literal.json"
       },
       {
         "injectTo": [
@@ -57,13 +57,13 @@
     ],
     "languages": [
       {
-        "id": "mt",
+        "id": "tmpl",
         "aliases": [
-          "mt",
+          "tmpl",
           "Embedded JavaScript"
         ],
         "extensions": [
-          ".mt"
+          ".tmpl"
         ],
         "configuration": "./language-configuration.json"
       }

@@ -1,21 +1,21 @@
 {
   "name": "Embedded JavaScript (mojo.js)",
-  "scopeName": "text.html.mt",
-  "fileTypes": ["html.mt"],
+  "scopeName": "text.html.tmpl",
+  "fileTypes": ["html.tmpl"],
   "injections": {
-    "text.html.mt": {
+    "text.html.tmpl": {
       "patterns": [
         {
           "begin": "(^\\s*)(?=<%#(?![^%]*%>))",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.whitespace.comment.leading.mt"
+              "name": "punctuation.whitespace.comment.leading.tmpl"
             }
           },
           "end": "(?!\\G)(\\s*$\\n)?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.whitespace.comment.trailing.mt"
+              "name": "punctuation.whitespace.comment.trailing.tmpl"
             }
           },
           "patterns": [
@@ -28,13 +28,13 @@
           "begin": "(^\\s*)(?=<%%(?![^%]*%>))",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.whitespace.replacement.leading.mt"
+              "name": "punctuation.whitespace.replacement.leading.tmpl"
             }
           },
           "end": "(?!\\G)(\\s*$\\n)?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.whitespace.replacement.trailing.mt"
+              "name": "punctuation.whitespace.replacement.trailing.tmpl"
             }
           },
           "patterns": [
@@ -48,13 +48,13 @@
           "begin": "(^\\s*)(?=<%(?![^%]*%>))",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.whitespace.embedded.leading.mt"
+              "name": "punctuation.whitespace.embedded.leading.tmpl"
             }
           },
           "end": "(?!\\G)(\\s*$\\n)?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.whitespace.embedded.trailing.mt"
+              "name": "punctuation.whitespace.embedded.trailing.tmpl"
             }
           },
           "patterns": [
@@ -90,16 +90,16 @@
           "begin": "<%#",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.comment.begin.mt"
+              "name": "punctuation.definition.comment.begin.tmpl"
             }
           },
           "end": "%>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.comment.end.mt"
+              "name": "punctuation.definition.comment.end.tmpl"
             }
           },
-          "name": "comment.block.mt"
+          "name": "comment.block.tmpl"
         }
       ]
     },
@@ -109,32 +109,32 @@
           "begin": "(?<=\\s{2})(%#)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.comment.indented.line.mt"
+              "name": "punctuation.definition.comment.indented.line.tmpl"
             }
           },
           "end": "$",
-          "name": "comment.line.mt.indented"
+          "name": "comment.line.tmpl.indented"
         },
         {
           "begin": "^(%#)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.comment.line.mt"
+              "name": "punctuation.definition.comment.line.tmpl"
             }
           },
           "end": "$",
-          "name": "comment.line.mt"
+          "name": "comment.line.tmpl"
         },
         {
           "begin": "(?<=\\s{2})(%={,2})",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.indented.line.mt"
+              "name": "punctuation.section.embedded.indented.line.tmpl"
             }
           },
           "contentName": "source.js",
           "end": "$",
-          "name": "source.js.mt.indented",
+          "name": "source.js.tmpl.indented",
           "patterns": [
             {
               "include": "source.js"
@@ -145,11 +145,11 @@
           "begin": "^(%={,2})",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.line.mt"
+              "name": "punctuation.section.embedded.line.tmpl"
             }
           },
           "end": "$",
-          "name": "source.js.mt.line",
+          "name": "source.js.tmpl.line",
           "patterns": [
             {
               "include": "source.js"
@@ -164,14 +164,14 @@
           "begin": "<%%",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.begin.mt"
+              "name": "punctuation.section.embedded.begin.tmpl"
             }
           },
-          "contentName": "punctuation.whitespace.replacement.mt",
+          "contentName": "punctuation.whitespace.replacement.tmpl",
           "end": "%>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.end.mt"
+              "name": "punctuation.section.embedded.end.tmpl"
             },
             "1": {
               "name": "text.html.basic"
@@ -182,7 +182,7 @@
           "match": "(%%)",
           "captures": {
             "0": {
-              "name": "punctuation.section.embedded.replacement.mt"
+              "name": "punctuation.section.embedded.replacement.tmpl"
             }
           }
         }
@@ -194,20 +194,20 @@
           "begin": "<%(?!>)={,2}(?![^%]*=?%>)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.begin.mt"
+              "name": "punctuation.section.embedded.begin.tmpl"
             }
           },
           "contentName": "source.js",
           "end": "=?%>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.end.mt"
+              "name": "punctuation.section.embedded.end.tmpl"
             },
             "1": {
               "name": "source.js"
             }
           },
-          "name": "text.html.mt.block",
+          "name": "text.html.tmpl.block",
           "patterns": [
             {
               "include": "source.js"
@@ -218,20 +218,20 @@
           "begin": "<%(?!>)={,2}",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.begin.mt"
+              "name": "punctuation.section.embedded.begin.tmpl"
             }
           },
           "contentName": "source.js",
           "end": "=?%>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.end.mt"
+              "name": "punctuation.section.embedded.end.tmpl"
             },
             "1": {
               "name": "source.js"
             }
           },
-          "name": "text.html.mt.line",
+          "name": "text.html.tmpl.line",
           "patterns": [
             {
               "include": "source.js"
@@ -246,14 +246,14 @@
           "begin": "<{",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.begin.mt"
+              "name": "punctuation.section.embedded.begin.tmpl"
             }
           },
-          "contentName": "punctuation.whitespace.replacement.mt",
+          "contentName": "punctuation.whitespace.replacement.tmpl",
           "end": "}>",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.end.mt"
+              "name": "punctuation.section.embedded.end.tmpl"
             },
             "1": {
               "name": "text"

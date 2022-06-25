@@ -1,5 +1,5 @@
 import {tmpl} from '@mojojs/template';
-import {sql} from '@mojojs/pg';
+import Pg, {sql} from '@mojojs/pg';
 
 const template = tmpl`
 <html>
@@ -11,6 +11,15 @@ const template = tmpl`
   </body>
 </html>
 `;
+
+const pg = new Pg('postgres://user:password@localhost:5432/database');
+
+const one = await pg.query`SELECT ${1}`;
+
+const role = 'admin';
+const partialQuery = pg.sql`AND role = ${role}`;
+const name = 'root';
+const two = pg.query`SELECT * FROM users WHERE name = ${name} ${partialQuery}`;
 
 const query = sql`
 SELECT EXTRACT(EPOCH FROM ts) AS epoch, COALESCE(failed_jobs, 0) AS failed_jobs,

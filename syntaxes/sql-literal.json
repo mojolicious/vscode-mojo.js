@@ -4,43 +4,41 @@
   "injectionSelector": "L:source -comment -string",
   "patterns": [
     {
-      "name": "taggedTemplates",
-      "begin": "sql((`))",
+      "name": "string.template.ts",
+      "begin": "\\b(sql)\\s*(?=`)",
       "beginCaptures": {
         "1": {
-          "name": "entity.name.function.tagged-template.js"
-        },
-        "2": {
-          "name": "string.js"
-        },
-        "3": {
-          "name": "punctuation.definition.string.template.begin.js"
+          "name": "entity.name.function.tagged-template.ts"
         }
       },
-      "end": "(`)",
-      "endCaptures": {
-        "0": {
-          "name": "string.js"
-        },
-        "1": {
-          "name": "punctuation.definition.string.template.end.js"
-        }
-      },
+      "end": "(?<=`)",
       "patterns": [
         {
-          "include": "source.ts#template-substitution-element"
-        },
-        {
-          "include": "source.ts#string-character-escape"
-        },
-        {
-          "include": "source.sql"
-        },
-        {
-          "include": "source.plpgsql.postgres"
+          "include": "#embedded-sql"
         }
       ]
     }
   ],
-  "scopeName": "sql.literal"
+  "scopeName": "sql.literal",
+  "repository": {
+    "embedded-sql": {
+      "name": "string.template.ts",
+      "contentName": "meta.embedded.block.tmpl",
+      "begin": "`",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.template.begin.js" }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.template.end.js" }
+      },
+      "patterns": [
+        { "include": "source.ts#template-substitution-element" },
+        { "include": "source.ts#string-character-escape" },
+        { "include": "source.sql" },
+        { "include": "source.plpgsql.postgres" },
+        { "match": "." }
+      ]
+    }
+  }
 }

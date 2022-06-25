@@ -21,6 +21,11 @@ const partialQuery = pg.sql`AND role = ${role}`;
 const name = 'root';
 const two = pg.query`SELECT * FROM users WHERE name = ${name} ${partialQuery}`;
 
+const db = await pg.db();
+const three = await db.query`SELECT 2`;
+const four = await db.query`SELECT 3`;
+db.release();
+
 const query = sql`
 SELECT EXTRACT(EPOCH FROM ts) AS epoch, COALESCE(failed_jobs, 0) AS failed_jobs,
   COALESCE(finished_jobs, 0) AS finished_jobs

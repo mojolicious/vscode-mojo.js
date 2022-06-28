@@ -2,7 +2,7 @@
   "name": "javascript-tmpl-support",
   "displayName": "mojo.js",
   "description": "VS Code support for mojo.js",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "publisher": "kraih",
   "repository": {
     "type": "git",
